@@ -1,5 +1,6 @@
 package io.navendra.nestedrecycler.models
 
+import io.navendra.nestedrecycler.database.DatabaseHelper
 import java.util.*
 
 object ParentDataFactory{
@@ -17,11 +18,12 @@ object ParentDataFactory{
     }
 
     fun getParents(count : Int) : List<ParentModel>{
-        val parents = mutableListOf<ParentModel>()
+        /*val parents = mutableListOf<ParentModel>()
         repeat(count){
             val parent = ParentModel(randomTitle(), randomChildren())
             parents.add(parent)
         }
-        return parents
+        return parents*/
+        return DatabaseHelper.getDepartments()
     }
 }
